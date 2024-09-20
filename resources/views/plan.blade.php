@@ -6,8 +6,8 @@
       <div class="container">
         <div class="row align-items-center justify-content-center text-center">
           <div class="col-md-7">
-            <h1 class="mb-2">All Plans</h1>
-            <p class="text-white">These are all the plans available for design and planning</p>
+            <h1 class="mb-2">{{ $plan_type->name }}</h1>
+            <p class="text-white">Receive the best house design and planning of {{ $plan_type->name }}</p>
           </div>
         </div>
       </div>
@@ -18,6 +18,7 @@
     <div class="container">
 
       <div class="row">
+        @if(count($plans) > 0)
         @foreach ($plans as $plan)
         <div class="col-md-4 mb-5">
             <div class="media-38289">
@@ -36,13 +37,16 @@
               </div>
             </div>
           </div>
+          <div class="col-12 mt-5 text-center pagination-39291">
+            <span class="active">1</span>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+          </div>
         @endforeach
-        <div class="col-12 mt-5 text-center pagination-39291">
-          <span class="active">1</span>
-          <a href="#">2</a>
-          <a href="#">3</a>
-          <a href="#">4</a>
-        </div>
+        @else
+        <p style="text-align: center">no plans available in this category</p>
+        @endif
       </div>
     </div>
   </div>

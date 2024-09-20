@@ -66,20 +66,18 @@
                       Plans
                     </a>
                     <div class="dropdown-menu" aria-labelledby="plansDropdown">
-                      <a class="dropdown-item" href="agents.html">All Plans</a>
-                      <a class="dropdown-item" href="agents.html">Cottage Plans</a>
-                      <a class="dropdown-item" href="agents.html">Low Budget Plans</a>
-                      <a class="dropdown-item" href="agents.html">Medium Budget Plans</a>
-                      <a class="dropdown-item" href="agents.html">High Budget Plans</a>
-                      <a class="dropdown-item" href="agents.html">Double Story Plans</a>
+                      <a class="dropdown-item" href="{{ route('plans.index') }}">All Plans</a>
+                      @foreach ($plan_types as $type)
+                      <a class="dropdown-item" href="{{ route('plans.show', $type->id) }}">{{ $type->name }}</a>
+                      @endforeach
+
                     </div>
                   </li>
-
                   <!--<li><a href="agents.html" class="nav-link">Agents</a></li>
                   <li><a href="property.html" class="nav-link">Property</a></li>
                   <li><a href="about.html" class="nav-link">About</a></li>
                   <li><a href="blog.html" class="nav-link">Blog</a></li>-->
-                  <li><a href="contact.html" class="nav-link">Contact</a></li>
+                  <li><a href="{{ route('contact') }}" class="nav-link">Contact</a></li>
                   <li><a href="agents.html" class="nav-link">Feedback & Suggestions</a></li>
                 </ul>
               </nav>
@@ -95,7 +93,7 @@
     @yield('content')
 
 {{-- footer --}}
-<footer class="site-footer">
+<footer style="padding-bottom: 15px;" class="site-footer">
     <div class="container">
       <div class="row">
         <div class="col-md-4">
@@ -121,14 +119,14 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut dolores deserunt, obcaecati fuga quo. Autem explicabo sapiente, maiores.</p>
         </div>
       </div>
-      <div class="row pt-5 mt-5 text-center">
+      <div class="row mt-5 text-center">
         <div class="col-md-12">
-          <div class="border-top pt-5">
-            <p>
-          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-          Copyright Vakai &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | Developed by <a href="https://contessasoft.co.zw" target="_blank" >Contessasoft Pvt</a>
-          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-          </p>
+          <div class="border-top pt-3">
+            <p style="text-align: center">
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright Vakai &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | Developed by <a href="https://contessasoft.co.zw" target="_blank" >Contessasoft Pvt</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
           </div>
         </div>
 

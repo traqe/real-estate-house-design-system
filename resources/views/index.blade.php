@@ -9,7 +9,7 @@
             <h1 class="mb-2">House Design & Planning</h1>
             <p class="text-center mb-5"><span class="small address d-flex align-items-center justify-content-center"> <span class="icon-home mr-3 text-primary"></span> <span>Design your house using metrics such as:</span></span></p>
               <div class="d-flex media-38289 justify-content-around mb-5">
-                <div class="sq d-flex align-items-center"><span class="wrap-icon icon-fullscreen"></span> <span>square feet</span></div>
+                <div class="sq d-flex align-items-center"><span class="wrap-icon icon-fullscreen"></span> <span>square metres</span></div>
                 <div class="bed d-flex align-items-center"><span class="wrap-icon icon-bed"></span> <span>bedrooms</span></div>
                 <div class="bath d-flex align-items-center"><span class="wrap-icon icon-bath"></span> <span>bathrooms</span></div>
               </div>
@@ -74,7 +74,7 @@
               <span class="flaticon-calculator"></span>
             </div>
             <div class="text">
-              <h3>Vission</h3>
+              <h3>Vision</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo rem sit dolorem saepe ex voluptatum nam nulla et!</p>
             </div>
           </div>
@@ -88,93 +88,38 @@
       <div class="row justify-content-center">
         <div class="col-md-6 text-center">
           <h3 class="heading-29201 text-center text-white">Latest Designs</h3>
-
           <p class="mb-5 text-white">Here are the latest house designs, get a quote from us</p>
         </div>
       </div>
 
 
-      <div class="owl-carousel nonloop-block-14">
-        <div class="media-38289">
-          <a href="property-single.html" class="d-block"><img src="{{ asset('assets/images/img_1.jpg') }}" alt="Image" class="img-fluid"></a>
-          <div class="text">
-            <div class="d-flex justify-content-between mb-3">
-              <div class="sq d-flex align-items-center"><span class="wrap-icon icon-fullscreen"></span> <span>2911 Sq Ft.</span></div>
-              <div class="bed d-flex align-items-center"><span class="wrap-icon icon-bed"></span> <span>2.</span></div>
-                <div class="bath d-flex align-items-center"><span class="wrap-icon icon-bath"></span> <span>2</span></div>
-            </div>
-            <h3 class="mb-3"><a href="#">$570,000</a></h3>
-            <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span>156/10 Sapling Street, Harrison, ACT 2914</span></span>
-          </div>
-        </div>
+      <div class="container">
 
-        <div class="media-38289">
-          <a href="property-single.html" class="d-block"><img src="{{ asset('assets/images/img_2.jpg') }}" alt="Image" class="img-fluid"></a>
-          <div class="text">
-            <div class="d-flex justify-content-between mb-3">
-              <div class="sq d-flex align-items-center"><span class="wrap-icon icon-fullscreen"></span> <span>2911 Sq Ft.</span></div>
-              <div class="bed d-flex align-items-center"><span class="wrap-icon icon-bed"></span> <span>2.</span></div>
-                <div class="bath d-flex align-items-center"><span class="wrap-icon icon-bath"></span> <span>2</span></div>
-            </div>
-            <h3 class="mb-3"><a href="#">$1,570,000</a></h3>
-            <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span>156/10 Sapling Street, Harrison, ACT 2914</span></span>
-          </div>
-        </div>
+        <div class="row">
 
-        <div class="media-38289">
-            <a href="property-single.html" class="d-block"><img src="{{ asset('assets/images/img_3.jpg') }}" alt="Image" class="img-fluid"></a>
-            <div class="text">
-              <div class="d-flex justify-content-between mb-3">
-                <div class="sq d-flex align-items-center"><span class="wrap-icon icon-fullscreen"></span> <span>2911 Sq Ft.</span></div>
-                <div class="bed d-flex align-items-center"><span class="wrap-icon icon-bed"></span> <span>2.</span></div>
-                <div class="bath d-flex align-items-center"><span class="wrap-icon icon-bath"></span> <span>2</span></div>
+          @foreach ($plans as $plan)
+          <div class="col-md-4 mb-5">
+              <div class="media-38289">
+                <a href="{{ route('each.plan', $plan->id) }}" class="d-block"><img src="{{ asset('storage/images/' . $plan->image_url) }}" alt="Image" class="img-fluid"></a>
+                <div class="text">
+                  <div class="d-flex justify-content-between mb-3">
+                    <div class="sq d-flex align-items-center"><span class="wrap-icon icon-fullscreen"></span> <span>{{ $plan->area }} Sq metres.</span></div>
+                    <div class="bed d-flex align-items-center"><span class="wrap-icon icon-bed"></span> <span>{{ $plan->bedrooms }}</span></div>
+                    <div class="bath d-flex align-items-center"><span class="wrap-icon icon-bath"></span> <span>{{ $plan->bathrooms }}</span></div>
+                  </div>
+                  @foreach ($plan_types as $type)
+                      @if($type->id == $plan->plan_type)
+                          <span class="d-block small address d-flex align-items-center"> <span class="icon-home mr-3 text-primary"></span> <span>{{ $type->name }}</span></span>
+                      @endif
+                  @endforeach
+                </div>
               </div>
-              <h3 class="mb-3"><a href="#">$980,000</a></h3>
-              <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span>156/10 Sapling Street, Harrison, ACT 2914</span></span>
             </div>
-          </div>
-
-
-        <div class="media-38289">
-          <a href="property-single.html" class="d-block"><img src="{{ asset('assets/images/img_1.jpg') }}" alt="Image" class="img-fluid"></a>
-          <div class="text">
-            <div class="d-flex justify-content-between mb-3">
-              <div class="sq d-flex align-items-center"><span class="wrap-icon icon-fullscreen"></span> <span>2911 Sq Ft.</span></div>
-              <div class="bed d-flex align-items-center"><span class="wrap-icon icon-bed"></span> <span>2.</span></div>
-                <div class="bath d-flex align-items-center"><span class="wrap-icon icon-bath"></span> <span>2</span></div>
-            </div>
-            <h3 class="mb-3"><a href="#">$570,000</a></h3>
-            <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span>156/10 Sapling Street, Harrison, ACT 2914</span></span>
-          </div>
+          @endforeach
         </div>
-
-        <div class="media-38289">
-          <a href="property-single.html" class="d-block"><img src="{{ asset('assets/images/img_2.jpg') }}" alt="Image" class="img-fluid"></a>
-          <div class="text">
-            <div class="d-flex justify-content-between mb-3">
-              <div class="sq d-flex align-items-center"><span class="wrap-icon icon-fullscreen"></span> <span>2911 Sq Ft.</span></div>
-              <div class="bed d-flex align-items-center"><span class="wrap-icon icon-bed"></span> <span>2.</span></div>
-                <div class="bath d-flex align-items-center"><span class="wrap-icon icon-bath"></span> <span>2</span></div>
-            </div>
-            <h3 class="mb-3"><a href="#">$1,570,000</a></h3>
-            <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span>156/10 Sapling Street, Harrison, ACT 2914</span></span>
-          </div>
-        </div>
-
-        <div class="media-38289">
-            <a href="property-single.html" class="d-block"><img src="{{ asset('assets/images/img_3.jpg') }}" alt="Image" class="img-fluid"></a>
-            <div class="text">
-              <div class="d-flex justify-content-between mb-3">
-                <div class="sq d-flex align-items-center"><span class="wrap-icon icon-fullscreen"></span> <span>2911 Sq Ft.</span></div>
-                <div class="bed d-flex align-items-center"><span class="wrap-icon icon-bed"></span> <span>2.</span></div>
-                <div class="bath d-flex align-items-center"><span class="wrap-icon icon-bath"></span> <span>2</span></div>
-              </div>
-              <h3 class="mb-3"><a href="#">$980,000</a></h3>
-              <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span>156/10 Sapling Street, Harrison, ACT 2914</span></span>
-            </div>
-          </div>
-
       </div>
+
+    </div>
 
 
     </div>
