@@ -46,7 +46,7 @@
 
             <div class="col-3 ">
               <div class="site-logo">
-                <a href="index.html">Vakai</a>
+                <a href="/">Vakai</a>
               </div>
             </div>
 
@@ -59,8 +59,8 @@
 
               <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                  <li class="active"><a href="index.html" class="nav-link">Home</a></li>
-                  <li><a href="agents.html" class="nav-link">Shop</a></li>
+                  <li class="active"><a href="/" class="nav-link">Home</a></li>
+                  <li><a href="#" class="nav-link">Shop</a></li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="plansDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Plans
@@ -78,7 +78,7 @@
                   <li><a href="about.html" class="nav-link">About</a></li>
                   <li><a href="blog.html" class="nav-link">Blog</a></li>-->
                   <li><a href="{{ route('contact') }}" class="nav-link">Contact</a></li>
-                  <li><a href="agents.html" class="nav-link">Feedback & Suggestions</a></li>
+                  <li><a href="{{ route('feedback') }}" class="nav-link">Feedback & Suggestions</a></li>
                 </ul>
               </nav>
             </div>
@@ -97,20 +97,21 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <h3 class="text-white h5 mb-3">Subscribe</h3>
-          <form action="" class="d-flex">
-            <input type="text" class="form-control mr-3" placeholder="Enter your email">
-            <input type="submit" class="btn btn-primary text-white" value="Send Now">
-          </form>
+          <h5 class="text-white h5 mb-3">Address</h5>
+          <p>address</p>
+          <h5 class="text-white h5 mb-3">Phone</h5>
+          <p>phone</p>
+          <h5 class="text-white h5 mb-3">Email</h5>
+          <p>address</p>
         </div>
         <div class="col-md-3 ml-auto">
-          <h3 class="text-white h5 mb-3">Subscribe</h3>
+          <h3 class="text-white h5 mb-3">Useful Links</h3>
           <ul class="list-unstyled menu-arrow">
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Testimonials</a></li>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Privacy</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="{{ route('plans.index') }}">Plans</a></li>
+            <li><a href="{{ route('feedback') }}">Feedback & Suggestions</a></li>
+            <li><a href="{{ route('contact') }}">Contact Us</a></li>
             <li><a href="{{ route('admin.login') }}">Admin</a></li>
           </ul>
         </div>

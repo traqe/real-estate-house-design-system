@@ -13,7 +13,7 @@
                 <div class="bed d-flex align-items-center"><span class="wrap-icon icon-bed"></span> <span>bedrooms</span></div>
                 <div class="bath d-flex align-items-center"><span class="wrap-icon icon-bath"></span> <span>bathrooms</span></div>
               </div>
-            <p><a style="background-color: #7a1c27; border: 0" href="#" class="btn btn-primary text-white px-4 py-3">Learn More</a></p>
+            <p><a style="background-color: #7a1c27; border: 0" href="{{ route('plans.index') }}" class="btn btn-primary text-white px-4 py-3">Available Plans</a></p>
           </div>
         </div>
       </div>

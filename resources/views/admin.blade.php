@@ -54,6 +54,7 @@
             <div class="form-group row">
               <div class="col-md-12">
                 <label for="imageUpload">Select an image:</label>
+                <br>
                 <input type="file" id="image" name="image" accept="image/*">
               </div>
             </div>

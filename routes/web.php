@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FeedbackController;
 use App\Models\Admin;
 use App\Models\Plan;
 use App\Models\PlanType;
@@ -16,6 +17,9 @@ Route::get('/', function () {
 
     return view('index', compact('plans', 'plan_types'));
 });
+
+//feedback route
+Route::get('feedback', [FeedbackController::class, 'index'])->name('feedback');
 
 //contact route
 Route::get('contact', [ContactController::class, 'index'])->name('contact');
