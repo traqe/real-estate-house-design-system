@@ -59,9 +59,9 @@
 
               <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                  <li class="active"><a href="/" class="nav-link">Home</a></li>
+                  <li class="{{ request()->routeIs('home') ? 'active' : '' }}"><a href="{{ route('home') }}" class="nav-link">Home</a></li>
                   <li><a href="#" class="nav-link">Shop</a></li>
-                  <li class="nav-item dropdown">
+                  <li class="{{ request()->routeIs('plans.index') || request()->routeIs('plans.show') ? 'active' : '' }} nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="plansDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Plans
                     </a>
@@ -77,8 +77,8 @@
                   <li><a href="property.html" class="nav-link">Property</a></li>
                   <li><a href="about.html" class="nav-link">About</a></li>
                   <li><a href="blog.html" class="nav-link">Blog</a></li>-->
-                  <li><a href="{{ route('contact') }}" class="nav-link">Contact</a></li>
-                  <li><a href="{{ route('feedback') }}" class="nav-link">Feedback & Suggestions</a></li>
+                  <li class="{{ request()->routeIs('contact') ? 'active' : '' }}"><a href="{{ route('contact') }}" class="nav-link">Contact</a></li>
+                  <li class="{{ request()->routeIs('feedback') ? 'active' : '' }}"><a href="{{ route('feedback') }}" class="nav-link">Feedback & Suggestions</a></li>
                 </ul>
               </nav>
             </div>

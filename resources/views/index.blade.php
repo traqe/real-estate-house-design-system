@@ -7,7 +7,7 @@
         <div class="row align-items-center justify-content-center text-center">
           <div class="col-md-7">
             <h1 class="mb-2">House Design & Planning</h1>
-            <p class="text-center mb-5"><span class="small address d-flex align-items-center justify-content-center"> <span class="icon-home mr-3 text-primary"></span> <span>Design your house using metrics such as:</span></span></p>
+            <p class="text-center mb-5"><span class="home small address d-flex align-items-center justify-content-center"> <span class="wrap-icon icon-home mr-3 text-primary"></span> <span>Design your house using metrics such as:</span></span></p>
               <div class="d-flex media-38289 justify-content-around mb-5">
                 <div class="sq d-flex align-items-center"><span class="wrap-icon icon-fullscreen"></span> <span>square metres</span></div>
                 <div class="bed d-flex align-items-center"><span class="wrap-icon icon-bed"></span> <span>bedrooms</span></div>
@@ -28,13 +28,13 @@
             <div class="row">
               <div class="col-md-6 text-center mb-4">
                 <div class="service-38201">
-                  <span class="flaticon-house-2"></span>
+                  <span class="flaticon-calculator"></span>
                   <h3>Experience & Expertise</h3>
                 </div>
               </div>
               <div class="col-md-6 text-center mb-4">
                 <div class="service-38201">
-                  <span class="flaticon-bathtub"></span>
+                  <span class="flaticon-house-2"></span>
                   <h3>Customer-centric Approach</h3>
                 </div>
               </div>
@@ -47,7 +47,7 @@
               </div>
               <div class="col-md-6 text-center mb-4">
                 <div class="service-38201">
-                  <span class="flaticon-calculator"></span>
+                  <span class="flaticon-key"></span>
                   <h3>Strong Safety & Quality Standards</h3>
                 </div>
               </div>
@@ -109,7 +109,7 @@
                   </div>
                   @foreach ($plan_types as $type)
                       @if($type->id == $plan->plan_type)
-                          <span class="d-block small address d-flex align-items-center"> <span class="icon-home mr-3 text-primary"></span> <span>{{ $type->name }}</span></span>
+                          <span class="home d-block small address d-flex align-items-center"> <span class="wrap-icon icon-home mr-3 text-primary"></span> <span>{{ $type->name }}</span></span>
                       @endif
                   @endforeach
                 </div>

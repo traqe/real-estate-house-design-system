@@ -22,7 +22,7 @@
         @foreach ($plans as $plan)
         <div class="col-md-4 mb-5">
             <div class="media-38289">
-              <a href="property-single.html" class="d-block"><img src="{{ asset('storage/images/' . $plan->image_url) }}" alt="Image" class="img-fluid"></a>
+              <a href="{{ route('each.plan', $plan->id) }}" class="d-block"><img src="{{ asset('storage/images/' . $plan->image_url) }}" alt="Image" class="img-fluid"></a>
               <div class="text">
                 <div class="d-flex justify-content-between mb-3">
                   <div class="sq d-flex align-items-center"><span class="wrap-icon icon-fullscreen"></span> <span>{{ $plan->area }} Sq metres.</span></div>
@@ -31,7 +31,7 @@
                 </div>
                 @foreach ($plan_types as $type)
                     @if($type->id == $plan->plan_type)
-                        <span class="d-block small address d-flex align-items-center"> <span class="icon-home mr-3 text-primary"></span> <span>{{ $type->name }}</span></span>
+                        <span class="home d-block small address d-flex align-items-center"> <span class="wrap-icon icon-home mr-3 text-primary"></span> <span>{{ $type->name }}</span></span>
                     @endif
                 @endforeach
               </div>

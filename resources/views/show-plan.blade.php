@@ -15,6 +15,11 @@
                   <div class="bath d-flex align-items-center"><span class="wrap-icon icon-car"></span> <span>{{ $plan->garages }}</span></div>
                 </div>
               <p>
+            @if(session('success'))
+                <div class="alert alert-success alert-dismissable" role="alert">
+                    {{ session('success') }}
+                </div>
+            @endif
             </div>
           </div>
         </div>
@@ -29,7 +34,7 @@
               <img src="{{ asset('storage/images/' . $plan->image_url) }}" alt="House Image" class="img-fluid">
             </div>
           </div>
-          <div class="col-lg-5 ml-auto pl-lg-5 text-center">
+          <div class="each-plan col-lg-5 ml-auto pl-lg-5 text-center">
             <h3 class="text-center mb-4">{{ $plan_type->name }}</h3>
             <span class="wrap-icon icon-fullscreen"></span>
             <p>{{ $plan->area }} - square metres</p>
@@ -39,9 +44,35 @@
             <p>{{ $plan->bathrooms }} - bathrooms</p>
             <span class="wrap-icon icon-car"></span>
             <p>{{ $plan->garages }} - garages</p>
-            <p class="mt-5"><a href="#" class="btn btn-primary text-white">Get A Quote</a></p>
+            <p class="mt-5"><a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-primary text-white">Get A Quote</a></p>
           </div>
         </div>
       </div>
     </div>
+    <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Get Quote for plan</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form action="{{ route('postQuote') }}" method="post">
+         @csrf
+         <h5></h5>
+         <div class="modal-body p-4">
+            <input type="text" name="plan_id" value="{{ $plan->id }}" hidden>
+            <input type="text" name="name" class="form-control mb-3" placeholder="Full Name" required>
+            <input type="text" name="phone" class="form-control mb-3" placeholder="Phone Number" required>
+            <input type="email" name="email" class="form-control mb-3" placeholder="Email" required>
+         </div>
+         <div class="modal-footer">
+         <button type="submit" style="color: white" type="button" class="btn btn-primary">Submit</button>
+         </div>
+        </form>
+      </div>
+    </div>
+  </div>
 @endsection

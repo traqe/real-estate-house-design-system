@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('content')
+
 <div class="ftco-blocks-cover-1">
     <div class="site-section-cover overlay" data-stellar-background-ratio="0.5" style="background-image: url({{ asset('assets/images/hero_1.jpg') }})">
       <div class="container">
@@ -8,44 +9,46 @@
           <div class="col-md-7">
             <h1 class="mb-2">Get In Touch</h1>
             <p class="text-white">Wish to know more about us or request our service? Kindly contact us</p>
+            @if(session('success'))
+                <div class="alert alert-success alert-dismissable" role="alert">
+                    {{ session('success') }}
+                </div>
+            @endif
           </div>
         </div>
       </div>
     </div>
   </div>
 
-
-
-
   <div class="site-section bg-light" id="contact-section">
     <div class="container">
       <div class="row justify-content-center text-center">
       <div class="col-7 text-center mb-5">
         <h2>Contact Us</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo assumenda, dolorum necessitatibus eius earum voluptates sed!</p>
       </div>
     </div>
       <div class="row">
         <div class="col-lg-8 mb-5" >
-          <form action="#" method="post">
+          <form action="{{ route('postContact') }}" method="post">
+            @csrf
             <div class="form-group row">
               <div class="col-md-6 mb-4 mb-lg-0">
-                <input type="text" class="form-control" placeholder="First name">
+                <input type="text" name="first" class="form-control" placeholder="First name">
               </div>
               <div class="col-md-6">
-                <input type="text" class="form-control" placeholder="First name">
+                <input type="text" name="last" class="form-control" placeholder="Last name">
               </div>
             </div>
 
             <div class="form-group row">
               <div class="col-md-12">
-                <input type="text" class="form-control" placeholder="Email address">
+                <input type="text" name="email" class="form-control" placeholder="Email address">
               </div>
             </div>
 
             <div class="form-group row">
               <div class="col-md-12">
-                <textarea name="" id="" class="form-control" placeholder="Write your message." cols="30" rows="10"></textarea>
+                <textarea name="message" id="" class="form-control" placeholder="Write your message." cols="30" rows="10"></textarea>
               </div>
             </div>
             <div class="form-group row">

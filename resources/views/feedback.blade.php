@@ -8,14 +8,16 @@
           <div class="col-md-7">
             <h1 class="mb-2">Feedback & Suggestions</h1>
             <p class="text-white">We value accountability & responsibility. If you have anything share you are free to do</p>
+            @if(session('success'))
+                <div class="alert alert-success alert-dismissable" role="alert">
+                    {{ session('success') }}
+                </div>
+            @endif
           </div>
         </div>
       </div>
     </div>
   </div>
-
-
-
 
   <div class="site-section bg-light" id="contact-section">
     <div class="container">
@@ -26,25 +28,26 @@
     </div>
       <div class="row">
         <div class="col-lg-8 mb-5" >
-          <form action="#" method="post">
+          <form action="{{ route('postFeedback') }}" method="post">
+            @csrf
             <div class="form-group row">
               <div class="col-md-6 mb-4 mb-lg-0">
-                <input type="text" class="form-control" placeholder="First name">
+                <input type="text" name="first" class="form-control" placeholder="First name">
               </div>
               <div class="col-md-6">
-                <input type="text" class="form-control" placeholder="Last name">
+                <input type="text" name="last" class="form-control" placeholder="Last name">
               </div>
             </div>
 
             <div class="form-group row">
               <div class="col-md-12">
-                <input type="text" class="form-control" placeholder="Email address">
+                <input type="text" name="email" class="form-control" placeholder="Email address">
               </div>
             </div>
 
             <div class="form-group row">
               <div class="col-md-12">
-                <textarea name="" id="" class="form-control" placeholder="Write your message." cols="30" rows="10"></textarea>
+                <textarea name="message" id="" class="form-control" placeholder="Write your message." cols="30" rows="10"></textarea>
               </div>
             </div>
             <div class="form-group row">

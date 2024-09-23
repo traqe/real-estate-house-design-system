@@ -4,8 +4,12 @@ html {
 }
 
 .dropdown-item:hover {
-    background-color: #000080;
+    background-color: #00f;
     color: white;
+}
+
+.each-plan span {
+    color: #000080;
 }
 
 .font-size-10 {
@@ -2194,9 +2198,11 @@ h5,
 }
 .media-38289 .sq .wrap-icon,
 .media-38289 .bed .wrap-icon,
-.media-38289 .bath .wrap-icon {
-    margin-right: 5px;
+.media-38289 .bath .wrap-icon,
+.media-38289 .home .wrap-icon {
+    margin-right: 6px;
     color: #000080;
+    font-size: 12pt;
 }
 .media-38289 .address {
     color: rgba(255, 255, 255, 0.7);

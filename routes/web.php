@@ -16,18 +16,21 @@ Route::get('/', function () {
     $plan_types = PlanType::all();
 
     return view('index', compact('plans', 'plan_types'));
-});
+})->name('home');
 
 //feedback route
 Route::get('feedback', [FeedbackController::class, 'index'])->name('feedback');
+Route::post('postFeedback', [FeedbackController::class, 'postFeedback'])->name('postFeedback');
 
 //contact route
 Route::get('contact', [ContactController::class, 'index'])->name('contact');
+Route::post('postContact', [ContactController::class, 'postContact'])->name('postContact');
 
 // plan routes
 Route::get('each_plan/{id}', [PlanController::class, 'eachPlan'])->name('each.plan');
 Route::get('plans/{id}', [PlanController::class, 'show'])->name('plans.show');
 Route::get('plans', [PlanController::class, 'index'])->name('plans.index');
+Route::post('postQuote', [PlanController::class, 'postQuote'])->name('postQuote');
 
 // admin routes
 Route::get('admin_login', [AdminController::class, 'getLogin'])->name('admin.login');

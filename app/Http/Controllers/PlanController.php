@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Mail\QuoteForPlan;
 use App\Models\Plan;
 use App\Models\PlanType;
 use Illuminate\Http\Request;
-use phpDocumentor\Reflection\Types\Null_;
+use Illuminate\Support\Facades\Mail;
 
 class PlanController extends Controller
 {
@@ -35,5 +36,17 @@ class PlanController extends Controller
         $plan_types = PlanType::all();
 
         return view('show-plan', compact('plan', 'plan_types', 'plan_type'));
+    }
+
+    public function postQuote(Request $request)
+    {
+        $plan = Plan::findOrFail(request('plan_id'));
+        $plan_type = PlanType::findOrFail($plan->plan_type);
+        $data = request(['name','email','phone']);
+        array_push($data, $plan, $plan_type);
+        //dd($data);
+        Mail::to('tnrwatida@gmail.com')->send(new QuoteForPlan($data));
+
+        return redirect()->route('plans.show', $plan->id)->with('success', 'You have sucessfully sent a request');
     }
 }
