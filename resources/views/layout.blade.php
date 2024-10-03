@@ -46,7 +46,7 @@
 
             <div class="col-3 ">
               <div class="site-logo">
-                <a href="/">Vakai</a>
+                <a class="logo-text" href="/">Vakai</a>
               </div>
             </div>
 
@@ -60,6 +60,7 @@
               <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
                   <li class="{{ request()->routeIs('home') ? 'active' : '' }}"><a href="{{ route('home') }}" class="nav-link">Home</a></li>
+                  <li class="{{ request()->routeIs('about') ? 'active' : '' }}"><a href="{{ route('about') }}" class="nav-link">About</a></li>
                   <li><a href="#" class="nav-link">Shop</a></li>
                   <li class="{{ request()->routeIs('plans.index') || request()->routeIs('plans.show') ? 'active' : '' }} nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="plansDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -73,12 +74,13 @@
 
                     </div>
                   </li>
-                  <!--<li><a href="agents.html" class="nav-link">Agents</a></li>
+                  <li class="{{ request()->routeIs('design') ? 'active' : '' }}"><a href="{{ route('design.index') }}" class="nav-link">Design & Construction</a></li>
+                  <!--
                   <li><a href="property.html" class="nav-link">Property</a></li>
                   <li><a href="about.html" class="nav-link">About</a></li>
                   <li><a href="blog.html" class="nav-link">Blog</a></li>-->
                   <li class="{{ request()->routeIs('contact') ? 'active' : '' }}"><a href="{{ route('contact') }}" class="nav-link">Contact</a></li>
-                  <li class="{{ request()->routeIs('feedback') ? 'active' : '' }}"><a href="{{ route('feedback') }}" class="nav-link">Feedback & Suggestions</a></li>
+                  <li class="{{ request()->routeIs('feedback') ? 'active' : '' }}"><a href="{{ route('feedback') }}" class="nav-link">Feedback</a></li>
                 </ul>
               </nav>
             </div>
@@ -118,6 +120,12 @@
         <div class="col-md-4">
           <h3 class="text-white h5 mb-3">About</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut dolores deserunt, obcaecati fuga quo. Autem explicabo sapiente, maiores.</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com" class="mr-3 wrap-icon icon-facebook"></a>
+            <a href="https://www.twitter.com" class="mr-3 wrap-icon icon-twitter"></a>
+            <a href="https://www.instagram.com" class="mr-3 wrap-icon icon-instagram"></a>
+            <a href="https://www.linkedin.com" class="mr-3 wrap-icon icon-linkedin"></a>
+        </div>
         </div>
       </div>
       <div class="row mt-5 text-center">

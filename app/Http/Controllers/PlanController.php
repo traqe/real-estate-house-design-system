@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Mail\QuoteForDesign;
 use App\Mail\QuoteForPlan;
 use App\Models\Plan;
 use App\Models\PlanType;
@@ -42,9 +43,9 @@ class PlanController extends Controller
     {
         $plan = Plan::findOrFail(request('plan_id'));
         $plan_type = PlanType::findOrFail($plan->plan_type);
-        $data = request(['name','email','phone']);
+        $data = request(['name','email','phone', 'description']);
         array_push($data, $plan, $plan_type);
-        //dd($data);
+
         Mail::to('tnrwatida@gmail.com')->send(new QuoteForPlan($data));
 
         return redirect()->route('plans.show', $plan->id)->with('success', 'You have sucessfully sent a request');

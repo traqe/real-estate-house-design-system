@@ -32,6 +32,8 @@
           <div class="col-lg-6 mb-5 mb-lg-0">
             <div class="img-years">
               <img src="{{ asset('storage/images/' . $plan->image_url) }}" alt="House Image" class="img-fluid">
+              <h3 class="mb-3 mt-3">Description</h3>
+              <p>{{ $plan->description }}</p>
             </div>
           </div>
           <div class="each-plan col-lg-5 ml-auto pl-lg-5 text-center">
@@ -67,6 +69,7 @@
             <input type="text" name="name" class="form-control mb-3" placeholder="Full Name" required>
             <input type="text" name="phone" class="form-control mb-3" placeholder="Phone Number" required>
             <input type="email" name="email" class="form-control mb-3" placeholder="Email" required>
+            <textarea class="form-control mb-3" name="description" id="plan_description" placeholder="description" cols="52" rows="5"></textarea>
          </div>
          <div class="modal-footer">
          <button type="submit" style="color: white" type="button" class="btn btn-primary">Submit</button>

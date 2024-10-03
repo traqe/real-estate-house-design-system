@@ -7,6 +7,11 @@
         <div class="row align-items-center justify-content-center text-center">
           <div class="col-md-7">
             <h1 class="mb-2">Add A New House Plan</h1>
+            @if(session('success'))
+                <div class="alert alert-success alert-dismissable" role="alert">
+                    {{ session('success') }}
+                </div>
+            @endif
           </div>
         </div>
       </div>
@@ -50,6 +55,9 @@
                     @endforeach
                 </select>
             </div>
+
+            <textarea class="form-control" placeholder="Description of Plan" name="description" id="" cols="50" rows="6" required></textarea>
+
             <br>
             <div class="form-group row">
               <div class="col-md-12">
@@ -61,7 +69,7 @@
             <br>
             <div class="form-group row">
               <div class="col-md-6 mr-auto">
-                <input type="submit" class="btn btn-block btn-primary text-white py-3 px-5" value="Send Message">
+                <input type="submit" class="btn btn-block btn-primary text-white py-3 px-5" value="Add Plan">
               </div>
             </div>
           </form>

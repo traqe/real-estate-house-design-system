@@ -45,6 +45,7 @@ class AdminController extends Controller
         $plan->bathrooms = request('bathrooms');
         $plan->garages = request('garages');
         $plan->plan_type = request('plan_type');
+        $plan->description = request('description');
 
         // add image to the database
         $request->validate([
@@ -61,6 +62,10 @@ class AdminController extends Controller
 
         }
         $plan->save();
+
+        $plan_types = PlanType::all();
+
+        return view('admin', compact('plan_types'));
         // to view the image in the view ->>> <img src="{{ asset('storage/images/' . $model->image_url) }}" alt="Image">
     }
 }

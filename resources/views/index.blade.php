@@ -83,11 +83,11 @@
     </div>
   </div>
 
-  <div class="site-section block-14 bg-black">
+  <div class="site-section block-14 bg-white">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-6 text-center">
-          <h3 class="heading-29201 text-center text-white">Latest Designs</h3>
+          <h3 class="heading-29201 text-center text-black">Latest Designs</h3>
           <p class="mb-5 text-white">Here are the latest house designs, get a quote from us</p>
         </div>
       </div>
@@ -116,6 +116,7 @@
               </div>
             </div>
           @endforeach
+
         </div>
       </div>
 
@@ -124,8 +125,210 @@
 
     </div>
   </div>
+  <div class="site-section block-14 bg-white">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+          <h3 class="heading-29201 text-center text-black">Available Designs</h3>
+          <p><em>(click category to view available plans)</em></p>
+          <p class="mb-5 text-white">Here are the latest house designs, get a quote from us</p>
+        </div>
+      </div>
 
-  <div class="site-section">
+      <div class="container">
+
+        <div class="faq">
+            <div class="question">Cottage Plans</div>
+            <div class="answer">
+                <div class="row">
+
+                    @foreach ($plans_available as $plan)
+                    @if($plan->plan_type == 1)
+                    <div class="col-md-4 mb-5">
+                        <div class="media-38289">
+                          <a href="{{ route('each.plan', $plan->id) }}" class="d-block"><img src="{{ asset('storage/images/' . $plan->image_url) }}" alt="Image" class="img-fluid"></a>
+                          <div class="text">
+                            <div class="d-flex justify-content-between mb-3">
+                              <div class="sq d-flex align-items-center"><span class="wrap-icon icon-fullscreen"></span> <span>{{ $plan->area }} Sq metres.</span></div>
+                              <div class="bed d-flex align-items-center"><span class="wrap-icon icon-bed"></span> <span>{{ $plan->bedrooms }}</span></div>
+                              <div class="bath d-flex align-items-center"><span class="wrap-icon icon-bath"></span> <span>{{ $plan->bathrooms }}</span></div>
+                            </div>
+                            @foreach ($plan_types as $type)
+                                @if($type->id == $plan->plan_type)
+                                    <span class="home d-block small address d-flex align-items-center"> <span class="wrap-icon icon-home mr-3 text-primary"></span> <span>{{ $type->name }}</span></span>
+                                @endif
+                            @endforeach
+                          </div>
+                        </div>
+                      </div>
+                    @endif
+                    @endforeach
+
+                </div>
+            </div>
+        </div>
+        <div class="faq">
+            <div class="question">Low Budget Plans</div>
+            <div class="answer">
+                <div class="row">
+
+                    @foreach ($plans_available as $plan)
+                    @if($plan->plan_type == 2)
+                    <div class="col-md-4 mb-5">
+                        <div class="media-38289">
+                          <a href="{{ route('each.plan', $plan->id) }}" class="d-block"><img src="{{ asset('storage/images/' . $plan->image_url) }}" alt="Image" class="img-fluid"></a>
+                          <div class="text">
+                            <div class="d-flex justify-content-between mb-3">
+                              <div class="sq d-flex align-items-center"><span class="wrap-icon icon-fullscreen"></span> <span>{{ $plan->area }} Sq metres.</span></div>
+                              <div class="bed d-flex align-items-center"><span class="wrap-icon icon-bed"></span> <span>{{ $plan->bedrooms }}</span></div>
+                              <div class="bath d-flex align-items-center"><span class="wrap-icon icon-bath"></span> <span>{{ $plan->bathrooms }}</span></div>
+                            </div>
+                            @foreach ($plan_types as $type)
+                                @if($type->id == $plan->plan_type)
+                                    <span class="home d-block small address d-flex align-items-center"> <span class="wrap-icon icon-home mr-3 text-primary"></span> <span>{{ $type->name }}</span></span>
+                                @endif
+                            @endforeach
+                          </div>
+                        </div>
+                      </div>
+                    @endif
+                    @endforeach
+
+                </div>
+            </div>
+        </div>
+        <div class="faq">
+            <div class="question">Medium Budget Plans</div>
+            <div class="answer">
+                <div class="row">
+
+                    @foreach ($plans_available as $plan)
+                    @if($plan->plan_type == 3)
+                    <div class="col-md-4 mb-5">
+                        <div class="media-38289">
+                          <a href="{{ route('each.plan', $plan->id) }}" class="d-block"><img src="{{ asset('storage/images/' . $plan->image_url) }}" alt="Image" class="img-fluid"></a>
+                          <div class="text">
+                            <div class="d-flex justify-content-between mb-3">
+                              <div class="sq d-flex align-items-center"><span class="wrap-icon icon-fullscreen"></span> <span>{{ $plan->area }} Sq metres.</span></div>
+                              <div class="bed d-flex align-items-center"><span class="wrap-icon icon-bed"></span> <span>{{ $plan->bedrooms }}</span></div>
+                              <div class="bath d-flex align-items-center"><span class="wrap-icon icon-bath"></span> <span>{{ $plan->bathrooms }}</span></div>
+                            </div>
+                            @foreach ($plan_types as $type)
+                                @if($type->id == $plan->plan_type)
+                                    <span class="home d-block small address d-flex align-items-center"> <span class="wrap-icon icon-home mr-3 text-primary"></span> <span>{{ $type->name }}</span></span>
+                                @endif
+                            @endforeach
+                          </div>
+                        </div>
+                      </div>
+                    @endif
+                    @endforeach
+
+                </div>
+            </div>
+        </div>
+        <div class="faq">
+            <div class="question">High Budget Plans</div>
+            <div class="answer">
+                <div class="row">
+
+                    @foreach ($plans_available as $plan)
+                    @if($plan->plan_type == 4)
+                    <div class="col-md-4 mb-5">
+                        <div class="media-38289">
+                          <a href="{{ route('each.plan', $plan->id) }}" class="d-block"><img src="{{ asset('storage/images/' . $plan->image_url) }}" alt="Image" class="img-fluid"></a>
+                          <div class="text">
+                            <div class="d-flex justify-content-between mb-3">
+                              <div class="sq d-flex align-items-center"><span class="wrap-icon icon-fullscreen"></span> <span>{{ $plan->area }} Sq metres.</span></div>
+                              <div class="bed d-flex align-items-center"><span class="wrap-icon icon-bed"></span> <span>{{ $plan->bedrooms }}</span></div>
+                              <div class="bath d-flex align-items-center"><span class="wrap-icon icon-bath"></span> <span>{{ $plan->bathrooms }}</span></div>
+                            </div>
+                            @foreach ($plan_types as $type)
+                                @if($type->id == $plan->plan_type)
+                                    <span class="home d-block small address d-flex align-items-center"> <span class="wrap-icon icon-home mr-3 text-primary"></span> <span>{{ $type->name }}</span></span>
+                                @endif
+                            @endforeach
+                          </div>
+                        </div>
+                      </div>
+                    @endif
+                    @endforeach
+
+                </div>
+            </div>
+        </div>
+        <div class="faq">
+            <div class="question">Double Story Plans</div>
+            <div class="answer">
+                <div class="row">
+
+                    @foreach ($plans_available as $plan)
+                    @if($plan->plan_type == 5)
+                    <div class="col-md-4 mb-5">
+                        <div class="media-38289">
+                          <a href="{{ route('each.plan', $plan->id) }}" class="d-block"><img src="{{ asset('storage/images/' . $plan->image_url) }}" alt="Image" class="img-fluid"></a>
+                          <div class="text">
+                            <div class="d-flex justify-content-between mb-3">
+                              <div class="sq d-flex align-items-center"><span class="wrap-icon icon-fullscreen"></span> <span>{{ $plan->area }} Sq metres.</span></div>
+                              <div class="bed d-flex align-items-center"><span class="wrap-icon icon-bed"></span> <span>{{ $plan->bedrooms }}</span></div>
+                              <div class="bath d-flex align-items-center"><span class="wrap-icon icon-bath"></span> <span>{{ $plan->bathrooms }}</span></div>
+                            </div>
+                            @foreach ($plan_types as $type)
+                                @if($type->id == $plan->plan_type)
+                                    <span class="home d-block small address d-flex align-items-center"> <span class="wrap-icon icon-home mr-3 text-primary"></span> <span>{{ $type->name }}</span></span>
+                                @endif
+                            @endforeach
+                          </div>
+                        </div>
+                      </div>
+                    @endif
+                    @endforeach
+
+                </div>
+            </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    </div>
+  </div>
+  <div style="text-align: center;" class="mb-5">
+    <a href="#myModal" data-toggle="modal" data-target="#myModal" class="btn btn-primary text-white">Request For Quotation</a>
+  </div>
+  <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Get Quote for plan</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form action="{{ route('postQuote') }}" method="post">
+         @csrf
+         <h5></h5>
+         <div class="modal-body p-4">
+            <input type="text" name="name" class="form-control mb-3" placeholder="Full Name" required>
+            <input type="text" name="phone" class="form-control mb-3" placeholder="Phone Number" required>
+            <input type="email" name="email" class="form-control mb-3" placeholder="Email" required>
+            <select class="form-control mb-3" name="plan_id" id="plan_id" required>
+                @foreach ($plans as $plan_option)
+                <option value="{{ $plan->id }}">{{ $plan->area }} sq mtr - {{ $plan->bedrooms }} beds -  {{ $plan->bathrooms }} baths</option>
+                @endforeach
+            </select>
+            <textarea class="form-control mb-3" name="description" id="plan_description" placeholder="description" cols="52" rows="3"></textarea>
+         </div>
+         <div class="modal-footer">
+         <button type="submit" style="color: white" type="button" class="btn btn-primary">Submit</button>
+         </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  {{-- <div class="site-section">
     <div class="container">
       <div class="row justify-content-center mb-5">
         <div class="col-md-6 text-center">
@@ -293,5 +496,5 @@
 
       </div>
     </div>
-  </div>
+  </div> --}}
 @endsection

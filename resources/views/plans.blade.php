@@ -14,7 +14,7 @@
     </div>
   </div>
 
-  <div class="site-section bg-black">
+  <div class="site-section bg-white">
     <div class="container">
 
       <div class="row">
@@ -37,12 +37,6 @@
             </div>
           </div>
         @endforeach
-        <div class="col-12 mt-5 text-center pagination-39291">
-          <span class="active">1</span>
-          <a href="#">2</a>
-          <a href="#">3</a>
-          <a href="#">4</a>
-        </div>
       </div>
     </div>
   </div>

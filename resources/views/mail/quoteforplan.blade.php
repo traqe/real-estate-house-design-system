@@ -41,6 +41,7 @@
             <td>{{ $dataReceived[0]->garages }} - garages</td>
         </tr>
     </table>
+    <p><strong>Description:</strong> {{ $dataReceived['description'] }}</p>
     <br>
     <p>You may contact me on this number: {{ $dataReceived['phone'] }}
     <br>
